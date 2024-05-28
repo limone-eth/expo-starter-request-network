@@ -26,7 +26,7 @@ export default function App() {
     );
   }
   return (
-    <PrivyProvider appId={Constants.expoConfig?.extra?.privyAppId}>
+    <PrivyProvider appId={process.env.EXPO_PUBLIC_PRIVY_APP_ID!}>
       <SafeAreaView style={{flex: 1, margin: 10}}>
         <Wrapper />
       </SafeAreaView>
