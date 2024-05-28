@@ -35,3 +35,9 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 
+
+ios
+
+ios/*
+
+ios/Pods/*
