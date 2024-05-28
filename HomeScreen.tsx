@@ -1,9 +1,8 @@
 import React, {useState, useCallback} from "react";
 import {Text, TextInput, View, ScrollView} from "react-native";
-
+import {base} from "viem/chains";
 import {
   usePrivy,
-  useOAuthFlow,
   useEmbeddedWallet,
   getUserEmbeddedWallet,
   PrivyEmbeddedWalletProvider,
@@ -12,6 +11,7 @@ import {PrivyUser} from "@privy-io/public-api";
 
 import {Button} from "./Button";
 import {styles} from "./styles";
+import {createAndPayRequest} from "./lib/request-network/create-and-pay-request";
 
 const toMainIdentifier = (x: PrivyUser["linked_accounts"][number]) => {
   if (x.type === "phone") {
@@ -29,16 +29,17 @@ const toMainIdentifier = (x: PrivyUser["linked_accounts"][number]) => {
     return x.custom_user_id;
   }
 
-  return x.email;
+  return x.type;
 };
 
 export const HomeScreen = () => {
   const [password, setPassword] = useState("");
   const [chainId, setChainId] = useState("1");
   const [signedMessages, setSignedMessages] = useState<string[]>([]);
+  const [amount, setAmount] = useState<number>();
+  const [sendUserAddress, setSendUserAddress] = useState<string>();
 
   const {logout, user} = usePrivy();
-  const oauth = useOAuthFlow();
   const wallet = useEmbeddedWallet();
   const account = getUserEmbeddedWallet(user);
 
@@ -56,8 +57,26 @@ export const HomeScreen = () => {
         console.error(e);
       }
     },
-    [account?.address],
+    [account?.address]
   );
+
+  const sendTokens = async () => {
+    if (!amount || amount < 0) return;
+    const provider = await wallet.getProvider!();
+    const request = await createAndPayRequest(
+      {
+        payeeIdentity: account?.address!,
+        payerIdentity: sendUserAddress!,
+        signerIdentity: account?.address!,
+        expectedAmount: amount * 10 ** 6,
+        paymentAddress: sendUserAddress!,
+        reason: "Reason",
+        currencyAddress: "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+        chain: base,
+      },
+      provider
+    );
+  };
 
   const switchChain = useCallback(
     async (provider: PrivyEmbeddedWalletProvider, id: string) => {
@@ -71,7 +90,7 @@ export const HomeScreen = () => {
         console.error(e);
       }
     },
-    [account?.address],
+    [account?.address]
   );
 
   if (!user) {
@@ -81,20 +100,6 @@ export const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <Button onPress={logout}>Logout</Button>
-
-      <View style={{display: "flex", flexDirection: "row", gap: 5, margin: 10}}>
-        {(["github", "google", "discord", "apple"] as const).map((provider) => (
-          <View key={provider}>
-            <Button
-              disabled={oauth.state.status === "loading"}
-              loading={oauth.state.status === "loading"}
-              onPress={() => oauth.start({provider})}
-            >
-              {`Link ${provider}`}
-            </Button>
-          </View>
-        ))}
-      </View>
 
       {wallet.status === "needs-recovery" && (
         <TextInput
