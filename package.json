@@ -43,7 +43,6 @@
     "react-native-udp": "^2.7.0",
     "react-native-webview": "13.2.2",
     "readable-stream": "^1.0.33",
-    "rn-nodeify": "tradle/rn-nodeify",
     "stream-browserify": "^1.0.0",
     "string_decoder": "^0.10.31",
     "tty-browserify": "^0.0.0",
