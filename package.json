@@ -29,6 +29,7 @@
     "expo-web-browser": "~12.3.2",
     "fast-text-encoding": "^1.0.6",
     "https-browserify": "^0.0.1",
+    "node-libs-browser": "^2.2.1",
     "path-browserify": "^0.0.0",
     "react": "18.2.0",
     "react-native": "0.72.10",
