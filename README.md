@@ -8,7 +8,7 @@ expo app.
 1. Install dependencies
 
    ```sh
-   npm i
+   yarn i
    ```
 
 1. Add your Privy app ID in `App.js`
@@ -29,12 +29,12 @@ expo app.
 
 ```sh
 # expo go
-npm start
+yarn start
 
 # ios
-npm run ios
+yarn run ios
 
 # android
-npm run android
+yarn run android
 ```
 # expo-starter-request-network
