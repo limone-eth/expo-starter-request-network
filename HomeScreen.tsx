@@ -1,6 +1,6 @@
 import React, {useState, useCallback} from "react";
 import {Text, TextInput, View, ScrollView} from "react-native";
-import {base} from "viem/chains";
+import {base, sepolia} from "viem/chains";
 import {
   usePrivy,
   useEmbeddedWallet,
@@ -36,8 +36,10 @@ export const HomeScreen = () => {
   const [password, setPassword] = useState("");
   const [chainId, setChainId] = useState("1");
   const [signedMessages, setSignedMessages] = useState<string[]>([]);
-  const [amount, setAmount] = useState<number>();
-  const [sendUserAddress, setSendUserAddress] = useState<string>();
+  const [amount, setAmount] = useState<number>(1);
+  const [sendUserAddress, setSendUserAddress] = useState<string>(
+    "0x1358155a15930f89eBc787a34Eb4ccfd9720bC62"
+  );
 
   const {logout, user} = usePrivy();
   const wallet = useEmbeddedWallet();
@@ -71,11 +73,12 @@ export const HomeScreen = () => {
         expectedAmount: amount * 10 ** 6,
         paymentAddress: sendUserAddress!,
         reason: "Reason",
-        currencyAddress: "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
-        chain: base,
+        currencyAddress: "0x94a9D9AC8a22534E3FaCa9F4e7F2E2cf85d5E4C8",
+        chain: sepolia,
       },
       provider
     );
+    console.log(request);
   };
 
   const switchChain = useCallback(
@@ -165,6 +168,8 @@ export const HomeScreen = () => {
                 Sign Message
               </Button>
             )}
+
+            <Button onPress={() => sendTokens()}>Create Request</Button>
 
             {wallet.status === "connected" && (
               <>
