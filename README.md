@@ -37,3 +37,4 @@ npm run ios
 # android
 npm run android
 ```
+# expo-starter-request-network
