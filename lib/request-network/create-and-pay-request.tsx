@@ -19,7 +19,7 @@ export const createAndPayRequest = async (
     JSON.stringify(requestCreateParameters, null, 2)
   );
   console.log([0, 1, 2, 3, 4].slice(0, 2));
-  console.log(randomBytes(32));
+  console.log({randomBytes: randomBytes(32)});
   const createdRequest = await requestClient.createRequest(
     requestCreateParameters
   );
