@@ -1,14 +1,19 @@
 import "fast-text-encoding";
 import "react-native-get-random-values";
-import { registerRootComponent } from 'expo';
+import "crypto-browserify";
+import { Buffer } from "buffer";
 import "@ethersproject/shims";
 import Constants from "expo-constants";
 import React from "react";
+import { registerRootComponent } from 'expo';
 import {SafeAreaView, View, Text} from "react-native";
 
 import {PrivyProvider} from "@privy-io/expo";
 
 import {Wrapper} from "./Wrapper";
+
+// Polyfill Buffer globally
+global.Buffer = Buffer;
 
 export default function App() {
   if (Constants.expoConfig?.extra?.privyAppId === "<your-app-id>") {
