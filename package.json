@@ -17,6 +17,7 @@
     "@tradle/react-native-http": "^2.0.1",
     "browserify-zlib": "^0.1.4",
     "buffer": "^4.9.2",
+    "crypto-browserify": "^3.12.0",
     "dns.js": "^1.0.1",
     "events": "^1.1.1",
     "expo": "~49.0.15",

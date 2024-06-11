@@ -3,14 +3,12 @@ module.exports = function (api) {
   return {
     presets: [["babel-preset-expo", {lazyImports: true}]],
     plugins: [
-      ["@babel/plugin-transform-class-properties", {loose: true}],
+      // ["@babel/plugin-transform-class-properties", {loose: true}],
       [
         "module-resolver",
         {
           alias: {
-            crypto: "react-native-quick-crypto",
-            stream: "readable-stream",
-            buffer: "@craftzdog/react-native-buffer",
+            crypto: "crypto-browserify",
           },
         },
       ],

@@ -5,11 +5,13 @@ import {processPayment, sendPaymentTransaction} from "./pay-request";
 import {getRequestData} from "./retrieve-requests";
 import {getEthersProvider, getEthersSigner} from "../privy";
 import {randomBytes} from "ethers/lib/utils";
+import { NativeModules } from 'react-native';
 
 export const createAndPayRequest = async (
   requestParams: CreateRequestParams,
   provider: PrivyEmbeddedWalletProvider
 ) => {
+  console.log("NativeModules:", NativeModules);
   const requestCreateParameters = createRequestParameters(requestParams);
   console.log("Getting request client...");
   const requestClient = getRequestClient(provider);
