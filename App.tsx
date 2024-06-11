@@ -14,9 +14,11 @@ import {Wrapper} from "./Wrapper";
 
 // Polyfill Buffer globally
 global.Buffer = Buffer;
+console.log('Buffer polyfilled:', global.Buffer);
 
 // Polyfill crypto
 global.crypto = require('crypto');
+console.log('Crypto polyfilled:', global.crypto);
 
 export default function App() {
   if (Constants.expoConfig?.extra?.privyAppId === "<your-app-id>") {
@@ -44,3 +46,4 @@ export default function App() {
 }
 
 registerRootComponent(App);
+console.log('App registered');
