@@ -15,9 +15,6 @@ import {Wrapper} from "./Wrapper";
 // Polyfill Buffer globally
 global.Buffer = Buffer;
 
-// Polyfill crypto
-global.crypto = require('crypto');
-
 export default function App() {
   if (Constants.expoConfig?.extra?.privyAppId === "<your-app-id>") {
     return (
