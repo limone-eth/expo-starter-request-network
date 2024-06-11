@@ -6,7 +6,7 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "jsEngine": "jsc",
+    "jsEngine": "hermes",
     "scheme": "privy-expo",
     "splash": {
       "image": "./assets/splash.png",
