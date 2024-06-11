@@ -12,6 +12,7 @@ import {PrivyUser} from "@privy-io/public-api";
 import {Button} from "./Button";
 import {styles} from "./styles";
 import {createAndPayRequest} from "./lib/request-network/create-and-pay-request";
+import crypto from 'crypto';
 
 const toMainIdentifier = (x: PrivyUser["linked_accounts"][number]) => {
   if (x.type === "phone") {
@@ -96,12 +97,35 @@ export const HomeScreen = () => {
     [account?.address]
   );
 
+  const generateRandomBytes = () => {
+    return new Promise((resolve, reject) => {
+      crypto.randomBytes(16, (err, buffer) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(buffer.toString('hex'));
+        }
+      });
+    });
+  };
+
+  const handleGenerate = async () => {
+    try {
+      const randomString = await generateRandomBytes();
+      alert(`Random String: ${randomString}`);
+    } catch (error) {
+      console.error('Error generating random bytes:', error);
+    }
+  };
+
   if (!user) {
     return null;
   }
 
   return (
     <View style={styles.container}>
+      <Button onPress={handleGenerate}>Generate Random Bytes using crypto-browserify</Button>
+
       <Button onPress={logout}>Logout</Button>
 
       {wallet.status === "needs-recovery" && (
