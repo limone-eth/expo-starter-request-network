@@ -29,7 +29,7 @@
       "favicon": "./assets/favicon.png"
     },
     "extra": {
-      "privyAppId": "<your_app_id>"
+      "privyAppId": "<your-app-id>"
     }
   }
 }

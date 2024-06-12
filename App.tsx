@@ -1,6 +1,5 @@
 import "fast-text-encoding";
 import "react-native-get-random-values";
-import { registerRootComponent } from 'expo';
 import "@ethersproject/shims";
 import Constants from "expo-constants";
 import React from "react";
@@ -34,5 +33,3 @@ export default function App() {
     </PrivyProvider>
   );
 }
-
-registerRootComponent(App);
