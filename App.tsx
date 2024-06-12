@@ -4,6 +4,7 @@ import "@ethersproject/shims";
 import Constants from "expo-constants";
 import React from "react";
 import {SafeAreaView, View, Text} from "react-native";
+import 'node-libs-react-native/globals';
 
 import {PrivyProvider} from "@privy-io/expo";
 
