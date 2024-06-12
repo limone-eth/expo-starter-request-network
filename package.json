@@ -41,8 +41,5 @@
   "prettier": {
     "bracketSpacing": false
   },
-  "private": true,
-  "react-native": {
-    "http": "@tradle/react-native-http"
-  }
+  "private": true
 }
