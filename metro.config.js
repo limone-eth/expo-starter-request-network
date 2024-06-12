@@ -6,6 +6,7 @@ const extraNodeModules = require("node-libs-browser");
 const config = getDefaultConfig(__dirname);
 
 config.resolver.extraNodeModules = extraNodeModules;
+config.resolver.extraNodeModules.crypto = require("crypto-browserify");
 config.resolver.sourceExts.push("cjs");
 
 config.transformer.getTransformOptions = async () => ({
