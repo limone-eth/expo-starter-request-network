@@ -7,6 +7,7 @@ module.exports = function (api) {
       ['module-resolver', {
         alias: {
           'http': 'stream-http',
+          'https': 'stream-http', // stream-http can handle both http and https
           'stream': 'stream-browserify',
           'crypto': 'crypto-browserify',
         }
