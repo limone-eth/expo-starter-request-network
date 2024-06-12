@@ -6,8 +6,6 @@ module.exports = function (api) {
       ["@babel/plugin-transform-class-properties", {loose: true}],
       ['module-resolver', {
         alias: {
-          'http': 'stream-http',
-          'https': 'stream-http', // stream-http can handle both http and https
           'stream': 'readable-stream',
           'crypto': 'crypto-browserify',
         }
