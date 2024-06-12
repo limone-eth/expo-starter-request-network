@@ -1,6 +1,7 @@
 import 'node-libs-react-native/globals';
 import "fast-text-encoding";
 import "react-native-get-random-values";
+import "crypto-browserify"
 import "@ethersproject/shims";
 import Constants from "expo-constants";
 import React from "react";

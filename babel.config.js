@@ -7,6 +7,7 @@ module.exports = function (api) {
       ['module-resolver', {
         alias: {
           'stream': 'stream-browserify',
+          'crypto': 'crypto-browserify',
         }
       }],
     ],
