@@ -6,7 +6,10 @@ const extraNodeModules = require("node-libs-browser");
 const config = getDefaultConfig(__dirname);
 
 config.resolver.extraNodeModules = extraNodeModules;
-config.resolver.extraNodeModules.crypto = require("crypto-browserify");
+
+const path = require('path');
+config.resolver.extraNodeModules.crypto = path.resolve(__dirname, 'shim.js');
+
 config.resolver.sourceExts.push("cjs");
 
 config.transformer.getTransformOptions = async () => ({
