@@ -3,7 +3,6 @@ import "fast-text-encoding";
 import "react-native-get-random-values";
 import "crypto-browserify";
 import "stream-http";
-import 'https-browserify';
 import "@ethersproject/shims";
 import Constants from "expo-constants";
 import React from "react";
