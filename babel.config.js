@@ -4,9 +4,9 @@ module.exports = function (api) {
     presets: [["babel-preset-expo", {lazyImports: true}]],
     plugins: [
       [
-        "module-resolver",
+        "babel-plugin-rewrite-require",
         {
-          alias: {
+          aliases: {
             crypto: "crypto-browserify",
           },
         },

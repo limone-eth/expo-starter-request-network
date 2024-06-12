@@ -15,6 +15,7 @@
     "@requestnetwork/request-client.js": "^0.45.0",
     "@requestnetwork/web3-signature": "^0.4.40",
     "@tradle/react-native-http": "^2.0.1",
+    "babel-plugin-rewrite-require": "^1.14.5",
     "browserify-zlib": "^0.1.4",
     "buffer": "^4.9.2",
     "crypto-browserify": "^3.12.0",

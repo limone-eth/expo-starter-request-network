@@ -3592,6 +3592,11 @@ babel-plugin-react-native-web@~0.18.10:
   resolved "https://registry.yarnpkg.com/babel-plugin-react-native-web/-/babel-plugin-react-native-web-0.18.12.tgz#3e9764484492ea612a16b40135b07c2d05b7969d"
   integrity sha512-4djr9G6fMdwQoD6LQ7hOKAm39+y12flWgovAqS1k5O8f42YQ3A1FFMyV5kKfetZuGhZO5BmNmOdRRZQ1TixtDw==
 
+babel-plugin-rewrite-require@^1.14.5:
+  version "1.14.5"
+  resolved "https://registry.yarnpkg.com/babel-plugin-rewrite-require/-/babel-plugin-rewrite-require-1.14.5.tgz#36ca19002b145bbe17fa698b68a883e38d78b6d9"
+  integrity sha512-TsDvs3JesFMn/cLO0A9/pLSWBtUWi8fGTT8yE7NsrbZ477zzu5nVVQ09+xhbvIjPaQEQ+JXrwRR+qxjt8n/NnA==
+
 babel-plugin-syntax-trailing-function-commas@^7.0.0-beta.0:
   version "7.0.0-beta.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-trailing-function-commas/-/babel-plugin-syntax-trailing-function-commas-7.0.0-beta.0.tgz#aa213c1435e2bffeb6fca842287ef534ad05d5cf"
