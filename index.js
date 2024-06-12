@@ -17,4 +17,3 @@ Object.assign(window, {
 });
 import "fast-text-encoding";
 import "@ethersproject/shims";
-import "./shim.js";
