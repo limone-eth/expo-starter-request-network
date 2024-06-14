@@ -1,3 +1,4 @@
+import "readable-stream"; // stream polyfill
 import 'node-libs-react-native/globals'; // Buffer global
 import "crypto-browserify"; // crypto polyfill
 import "react-native-get-random-values"; // Also crypto polyfill
