@@ -6,8 +6,6 @@ module.exports = function (api) {
       ["@babel/plugin-transform-class-properties", {loose: true}],
       ['module-resolver', {
         alias: {
-          'http': '@tradle/react-native-http',
-          'https': 'https-browserify',
           'stream': 'readable-stream',
           'crypto': 'crypto-browserify',
         }
