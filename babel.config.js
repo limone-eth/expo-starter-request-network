@@ -7,6 +7,7 @@ module.exports = function (api) {
       ['module-resolver', {
         alias: {
           'http': '@tradle/react-native-http',
+          'https': 'https-browserify',
           'stream': 'readable-stream',
           'crypto': 'crypto-browserify',
         }

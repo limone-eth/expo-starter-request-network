@@ -3,6 +3,7 @@ import 'node-libs-react-native/globals'; // Buffer global
 import "crypto-browserify"; // crypto polyfill
 import "react-native-get-random-values"; // Also crypto polyfill
 import "@tradle/react-native-http"; // http polyfill
+import "https-browserify"; // https polyfill
 import "fast-text-encoding";
 import "@ethersproject/shims";
 import Constants from "expo-constants";
