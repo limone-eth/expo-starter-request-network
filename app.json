@@ -13,7 +13,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "bundleIdentifier": "com.privy.expo",
       "supportsTablet": true
@@ -30,6 +32,9 @@
     },
     "extra": {
       "privyAppId": "<your_app_id>"
-    }
+    },
+    "plugins": [
+      "expo-secure-store"
+    ]
   }
 }
