@@ -13,7 +13,7 @@ import {SafeAreaView, View, Text} from "react-native";
 import {PrivyProvider} from "@privy-io/expo";
 
 import {Wrapper} from "./Wrapper";
-q
+
 export default function App() {
   if (Constants.expoConfig?.extra?.privyAppId === "<your-app-id>") {
     return (
