@@ -3,7 +3,7 @@ import "crypto-browserify"; // crypto polyfill
 import "react-native-get-random-values"; // Also crypto polyfill
 
 import { Buffer } from 'buffer' // Buffer polyfill
-globalThis.Buffer = Buffer
+global.Buffer = Buffer
 
 import "stream-http"; // http polyfill
 import "https-browserify"; // https polyfill
