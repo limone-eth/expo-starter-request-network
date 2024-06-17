@@ -5,6 +5,8 @@ import "react-native-get-random-values"; // Also crypto polyfill
 import { Buffer } from 'buffer' // Buffer polyfill
 globalThis.Buffer = Buffer
 
+import "stream-http"; // http polyfill
+
 import "fast-text-encoding";
 import "@ethersproject/shims";
 import Constants from "expo-constants";
