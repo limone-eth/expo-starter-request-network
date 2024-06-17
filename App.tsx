@@ -6,6 +6,7 @@ import { Buffer } from 'buffer' // Buffer polyfill
 globalThis.Buffer = Buffer
 
 import "stream-http"; // http polyfill
+import "https-browserify"; // https polyfill
 
 import "fast-text-encoding";
 import "@ethersproject/shims";

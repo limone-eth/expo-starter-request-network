@@ -24,6 +24,7 @@
     "expo-status-bar": "~1.6.0",
     "expo-web-browser": "~12.3.2",
     "fast-text-encoding": "^1.0.6",
+    "https-browserify": "^1.0.0",
     "react": "18.2.0",
     "react-native": "0.72.10",
     "react-native-get-random-values": "~1.9.0",
