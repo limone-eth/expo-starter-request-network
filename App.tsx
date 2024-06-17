@@ -1,8 +1,5 @@
 import "readable-stream"; // stream polyfill
 
-import { Buffer } from 'buffer' // Buffer polyfill
-global.Buffer = Buffer
-
 import "stream-http"; // http polyfill
 import "https-browserify"; // https polyfill
 
