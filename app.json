@@ -30,18 +30,6 @@
     },
     "extra": {
       "privyAppId": "<your_app_id>"
-    },
-    "plugins": [
-      [
-        "expo-build-properties",
-        {
-          "android": {
-            "packagingOptions": {
-              "pickFirst": ["**/libcrypto.so"]
-            }
-          }
-        }
-      ]
-    ]
+    }
   }
 }
