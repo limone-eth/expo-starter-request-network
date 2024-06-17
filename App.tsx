@@ -1,5 +1,6 @@
 import "readable-stream"; // stream polyfill
-
+import { install } from 'react-native-quick-crypto'; // crypto polyfill
+install();
 import "stream-http"; // http polyfill
 import "https-browserify"; // https polyfill
 
@@ -12,7 +13,7 @@ import {SafeAreaView, View, Text} from "react-native";
 import {PrivyProvider} from "@privy-io/expo";
 
 import {Wrapper} from "./Wrapper";
-
+q
 export default function App() {
   if (Constants.expoConfig?.extra?.privyAppId === "<your-app-id>") {
     return (

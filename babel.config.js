@@ -9,6 +9,8 @@ module.exports = function (api) {
           'http': 'stream-http',
           'https': 'https-browserify',
           'stream': 'readable-stream',
+          'crypto': 'react-native-quick-crypto',
+          'buffer': '@craftzdog/react-native-buffer',
         }
       }],
     ],
