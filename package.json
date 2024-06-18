@@ -13,6 +13,7 @@
     "@privy-io/expo": "^0.20.0",
     "@requestnetwork/payment-processor": "^0.45.1-next.2041",
     "@requestnetwork/request-client.js": "^0.47.1-next.2041",
+    "@requestnetwork/types": "^0.43.1-next.2041",
     "@requestnetwork/web3-signature": "^0.6.1-next.2041",
     "buffer": "^6.0.3",
     "crypto-browserify": "^3.12.0",
