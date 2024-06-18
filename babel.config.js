@@ -8,7 +8,6 @@ module.exports = function (api) {
         alias: {
           'http': 'stream-http',
           'https': 'https-browserify',
-          'stream': 'readable-stream',
           'crypto': 'crypto-browserify',
         }
       }],
