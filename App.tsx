@@ -1,6 +1,5 @@
 import "readable-stream"; // stream polyfill
-import { install } from 'react-native-quick-crypto'; // crypto polyfill
-install();
+
 import "stream-http"; // http polyfill
 import "https-browserify"; // https polyfill
 
