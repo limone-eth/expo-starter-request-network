@@ -65,7 +65,7 @@ export const HomeScreen = () => {
   );
 
   const sendTokens = async () => {
-    if (!amount || amount < 0) return;
+    if (!amount) return;
     const provider = await wallet.getProvider!();
     const request = await createAndPayRequest(
       {
