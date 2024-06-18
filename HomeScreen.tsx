@@ -1,6 +1,7 @@
 import React, {useState, useCallback} from "react";
 import {Text, TextInput, View, ScrollView} from "react-native";
 import {base, sepolia} from "viem/chains";
+import {parseUnits} from "viem";
 import {
   usePrivy,
   useEmbeddedWallet,
@@ -12,6 +13,7 @@ import {PrivyUser} from "@privy-io/public-api";
 import {Button} from "./Button";
 import {styles} from "./styles";
 import {createAndPayRequest} from "./lib/request-network/create-and-pay-request";
+import crypto from 'crypto';
 
 const toMainIdentifier = (x: PrivyUser["linked_accounts"][number]) => {
   if (x.type === "phone") {
@@ -36,7 +38,7 @@ export const HomeScreen = () => {
   const [password, setPassword] = useState("");
   const [chainId, setChainId] = useState("1");
   const [signedMessages, setSignedMessages] = useState<string[]>([]);
-  const [amount, setAmount] = useState<number>(1);
+  const [amount, setAmount] = useState<string>("1");
   const [sendUserAddress, setSendUserAddress] = useState<string>(
     "0x1358155a15930f89eBc787a34Eb4ccfd9720bC62"
   );
@@ -63,15 +65,15 @@ export const HomeScreen = () => {
   );
 
   const sendTokens = async () => {
-    if (!amount || amount < 0) return;
+    if (!amount) return;
     const provider = await wallet.getProvider!();
     const request = await createAndPayRequest(
       {
         payeeIdentity: account?.address!,
         payerIdentity: sendUserAddress!,
         signerIdentity: account?.address!,
-        expectedAmount: amount * 10 ** 6,
-        paymentAddress: sendUserAddress!,
+        expectedAmount: parseUnits(amount, 6).toString(),
+        paymentAddress: account?.address!,
         reason: "Reason",
         currencyAddress: "0x94a9D9AC8a22534E3FaCa9F4e7F2E2cf85d5E4C8",
         chain: sepolia,
@@ -96,12 +98,35 @@ export const HomeScreen = () => {
     [account?.address]
   );
 
+  const generateRandomBytes = () => {
+    return new Promise((resolve, reject) => {
+      crypto.randomBytes(16, (err, buffer) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(buffer.toString('hex'));
+        }
+      });
+    });
+  };
+
+  const handleGenerate = async () => {
+    try {
+      const randomString = await generateRandomBytes();
+      alert(`Random String: ${randomString}`);
+    } catch (error) {
+      console.error('Error generating random bytes:', error);
+    }
+  };
+
   if (!user) {
     return null;
   }
 
   return (
     <View style={styles.container}>
+      <Button onPress={handleGenerate}>Generate Random Bytes using crypto-browserify</Button>
+
       <Button onPress={logout}>Logout</Button>
 
       {wallet.status === "needs-recovery" && (

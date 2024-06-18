@@ -29,7 +29,7 @@ yarn-error.*
 *.pem
 
 # local env files
-.en
+.env
 .env*.local
 
 # typescript
@@ -37,7 +37,4 @@ yarn-error.*
 
 
 ios
-
-ios/*
-
-ios/Pods/*
+android
