@@ -1,9 +1,6 @@
 import { Buffer } from 'buffer' // Buffer polyfill
 global.Buffer = Buffer
 
-import "stream-http"; // http polyfill
-import "https-browserify"; // https polyfill
-
 import "fast-text-encoding";
 import "@ethersproject/shims";
 import Constants from "expo-constants";
