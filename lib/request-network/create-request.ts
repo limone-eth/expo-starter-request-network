@@ -1,5 +1,4 @@
 import { Types, Utils } from "@requestnetwork/request-client.js";
-import { ICreateRequestParameters } from "@requestnetwork/request-client.js/dist/types";
 import { Chain } from "viem";
 
 export interface CreateRequestParams {
@@ -32,7 +31,7 @@ export const createRequestParameters = ({
   currencyAddress,
   chain,
 }: CreateRequestParams) => {
-  const requestCreateParameters: ICreateRequestParameters = {
+  const requestCreateParameters: Types.ICreateRequestParameters = {
     requestInfo: {
       currency: {
         type: Types.RequestLogic.CURRENCY.ERC20,
