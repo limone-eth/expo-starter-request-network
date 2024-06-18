@@ -9,6 +9,7 @@ module.exports = function (api) {
           'http': 'stream-http',
           'https': 'https-browserify',
           'crypto': 'crypto-browserify',
+          'stream': 'stream-browserify',
         }
       }],
     ],

@@ -1,3 +1,4 @@
+import "stream-browserify"; // stream polyfill
 import "crypto-browserify"; // crypto polyfill
 import "react-native-get-random-values"; // Also crypto polyfill
 
