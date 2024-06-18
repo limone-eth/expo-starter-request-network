@@ -1,6 +1,7 @@
 import React, {useState, useCallback} from "react";
 import {Text, TextInput, View, ScrollView} from "react-native";
 import {base, sepolia} from "viem/chains";
+import {parseUnits} from "viem";
 import {
   usePrivy,
   useEmbeddedWallet,
@@ -37,7 +38,7 @@ export const HomeScreen = () => {
   const [password, setPassword] = useState("");
   const [chainId, setChainId] = useState("1");
   const [signedMessages, setSignedMessages] = useState<string[]>([]);
-  const [amount, setAmount] = useState<number>(1);
+  const [amount, setAmount] = useState<string>("1");
   const [sendUserAddress, setSendUserAddress] = useState<string>(
     "0x1358155a15930f89eBc787a34Eb4ccfd9720bC62"
   );
@@ -71,7 +72,7 @@ export const HomeScreen = () => {
         payeeIdentity: account?.address!,
         payerIdentity: sendUserAddress!,
         signerIdentity: account?.address!,
-        expectedAmount: amount * 10 ** 6,
+        expectedAmount: parseUnits(amount, 6).toString(),
         paymentAddress: sendUserAddress!,
         reason: "Reason",
         currencyAddress: "0x94a9D9AC8a22534E3FaCa9F4e7F2E2cf85d5E4C8",
